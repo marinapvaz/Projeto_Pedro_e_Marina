@@ -1,0 +1,14 @@
+class Populacao:
+    # criamos uma classe que diz quantas pessoas ela armazena
+    # e depois gera essas pessoas aleatoriamente
+
+    def __init__(self, tamanho = 1000):
+        
+        self.tamanho = tamanho
+        self.individuo = []
+        self.amostra(tamanho)
+        
+    def amostra(self, n):
+
+        for i in range(n):
+            self.individuo.append(Pessoa())
