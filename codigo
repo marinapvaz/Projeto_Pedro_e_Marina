@@ -1,3 +1,29 @@
+from numpy import random
+
+class Pessoa:
+    def __init__(self):
+        
+        # aqui nos criamos 5 atributos diferentes e atribuimos a cada um deles um numero gerado 
+        # aleatoriamente usando a media e o cv de cada um deles respectivamente
+
+        self.rede_de_ensino = random.multinomial(100,[0.78 + random.uniform(-0.052,0.052),0.5])[0]
+        self.modalidade = random.multinomial(100,[0.822 + random.uniform(-0.051,0.051),0.5])[0]
+        self.sexo = random.multinomial(100,[0.428 + random.uniform(-0.0095,0.0095),0.5])[0]
+        self.cor = random.multinomial(100,[0.57 + random.uniform(-0.012,0.012),0.5])[0]
+        self.situacao_de_ocupacao_na_semana_de_referencia = random.multinomial(100,[0.654 + random.uniform(-0.011,0.011),0.5])[0]
+        self.classificacao()
+
+    
+    def classificacao(self):
+        
+        # agora vamos atribuir a cada um dos atributos um dos valores binarios a partir dos valores numericos que eles receberam 
+        
+        self.rede_de_ensino = "particular" if self.rede_de_ensino < random.uniform(0,100) else "publica"
+        self.modalidade = "presencial" if self.modalidade < random.uniform(0,100) else "à distancia"
+        self.sexo = "homem" if self.sexo < random.uniform(0,100) else "mulher"
+        self.cor = "branca" if self.cor < random.uniform(0,100) else "preta ou parda"
+        self.situacao_de_ocupacao_na_semana_de_referencia = "ocupado" if self.situacao_de_ocupacao_na_semana_de_referencia < random.uniform(0,100) else "nao ocupado"
+        
 class Populacao:
     # criamos uma classe que diz quantas pessoas ela armazena
     # e depois gera essas pessoas aleatoriamente
