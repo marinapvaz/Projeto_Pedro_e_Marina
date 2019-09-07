@@ -4,7 +4,7 @@ class Pessoa:
     def __init__(self):
         
         # aqui nos criamos 5 atributos diferentes e atribuimos a cada um deles um numero gerado 
-        # aleatoriamente usando a media e o cv de cada um deles respectivamente
+        # aleatoriamente usando a media e o cv de cada um deles respectivamente, colocamos o ruido em uma distribuicao uniforme para melhor aproximar o cv
 
         self.rede_de_ensino = random.multinomial(100,[0.78 + random.uniform(-0.052,0.052),0.5])[0]
         self.modalidade = random.multinomial(100,[0.822 + random.uniform(-0.051,0.051),0.5])[0]
